@@ -32,13 +32,7 @@ function App() {
           <Route path='/' element={<Navigate to="/find-jobs" replace={true} />} />
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route path="/companies" element={<Companies />} />
-          <Route path={
-            user?.user?.accountType === "seeker"
-              ? "/user-profile"
-              : "/user-profile/:id"
-          }
-            element={<UserProfile />}
-          />
+          <Route path={user?.user?.accountType === "seeker" ? "/user-profile": "/user-profile/:id"}element={<UserProfile />}/>
           <Route path={"/company-profile"} element={<CompanyProfile />} />
           <Route path={"/comp any-profile/:id"} element={<CompanyProfile />} />
           <Route path={"/upload-job"} element={<UploadJob />} />
@@ -47,6 +41,7 @@ function App() {
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<Auth />} />
       </Routes>
+      <Footer/>
     </main>
   )
 }
